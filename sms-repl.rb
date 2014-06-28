@@ -6,7 +6,10 @@ class SmsRepl < Sinatra::Base
  
   get '/smsrepl' do
     twiml = Twilio::TwiML::Response.new do |r|
-      r.Message "Hey Monkey. Thanks for the message!"
+          answer= eval params[:Body]
+      r.Message do |message| 
+          message.Body answer.to_s
+      end
     end
     twiml.text
   end
