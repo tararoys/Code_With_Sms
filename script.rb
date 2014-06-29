@@ -1,0 +1,6 @@
+"Learning to program is like learning magic. You tell the computer magic words, and the computer does what you want. Let us learn some magic words. \n Let us say hi to the computer.  If you say hi, nothing will happen, because the computer does not realize you are talking to it.  \n You need to put the hi in quotes so the computer knows you are talking to it.  So type \n\n \"hi\" \n\n with quotes."
+params[:Body].chomp == "\"hi\"" ?  "hi" + "\n\nThe computer said \"hi\" back to you.  If you type other words in quotes, the computer will repeat what you just said.  Type, in quotes,\n\n \"echo\""  : "try again"
+params[:Body].chomp == "\"echo\"" ?  "echo" + "\n\n The computer repeated back what you said. Why do you need the quotes? I will explain later, because it will take a little while and I want us to have some fun first. Write the word\n \n  \"kitty\" \n \n  Make sure it is in quotes."  : "try again"  
+params[:Body].chomp == "\"kitty\"" ? "kitty" +  "\n\n We have gotten the computer to say \"kitty\" back to you.  Now, let us do fun things with that word.  Let us spell kitty backwards. Write \n \n \"kitty\".reverse" : "try again" 
+params[:Body].chomp == "\"kitty\".reverse" ? "kitty".reverse + "\n\n We reversed the kitty! This demo is now over. When you text again, you will start from the beginning."  : "try again"
+File.delete(phone_number);
