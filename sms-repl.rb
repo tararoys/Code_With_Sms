@@ -36,4 +36,26 @@ class SmsRepl < Sinatra::Base
     end
     twiml.text
   end
+
+get '/donate' do
+<<-eos
+  <p> Donations!  yay! </p> 
+  <script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=tlroys@gmail.com" 
+      data-button="donate" 
+      data-name="Learn To Code With SMS" 
+      data-quantity="1" 
+      data-amount="5.00" 
+      data-shipping="0" 
+      data-tax="0" 
+      data-callback="http://104.131.233.250:9292/thank-you" 
+      data-env="sandbox">
+  </script>
+eos
+
+end
+
+  get '/thank-you' do
+   "thank you" 
+  end 
+  
 end
